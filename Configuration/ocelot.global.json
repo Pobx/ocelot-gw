@@ -1,0 +1,10 @@
+{
+  "GolbalConfiguration": {
+    "BaseUrl": "https://localhost:7001",
+    "ServiceDiscoveryProvider": {
+      "Type": "AppConfiguration",
+      "PollingIntervalSeconds": 100,
+      "AppConfigurationSectionName": "ApiServices"
+    }
+  }
+}

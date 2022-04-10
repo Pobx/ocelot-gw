@@ -1,0 +1,18 @@
+{
+  "SwaggerEndPoints": [
+    {
+      "Key": "weather",
+      "TransformByOcelotConfig": true,
+      "Config": [
+        {
+          "Name": "Weather API",
+          "Version": "v1",
+          "Service": {
+            "Name": "weathers",
+            "Path": "/swagger/v1/swagger.json"
+          }
+        }
+      ]
+    }
+  ]
+}

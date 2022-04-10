@@ -1,0 +1,13 @@
+{
+  "Routes": [
+    {
+      "DownstreamPathTemplate": "/api/WeatherForecast",
+      "ServiceName": "weathers",
+      "UpstreamPathTemplate": "/weather",
+      "UpstreamHttpMethod": ["Get"],
+      "SwaggerKey": "weather",
+      "Key": "weather",
+      "DangerousAcceptAnyServerCertificateValidator": true
+    }
+  ]
+}

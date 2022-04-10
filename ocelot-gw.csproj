@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <RootNamespace>ocelot_gw</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MMLib.Ocelot.Provider.AppConfiguration" Version="2.0.0" />
+    <PackageReference Include="MMLib.SwaggerForOcelot" Version="4.9.0" />
+    <PackageReference Include="Ocelot" Version="17.0.0" />
+    <PackageReference Include="Ocelot.Tracing.OpenTracing" Version="17.0.0" />
+  </ItemGroup>
+
+</Project>

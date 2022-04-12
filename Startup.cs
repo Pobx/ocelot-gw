@@ -70,7 +70,7 @@ namespace ocelot_gw
         {
           Console.WriteLine("=========================> Bearer");
           options.Authority = "https://localhost:5001";
-          options.Audience = "client.kma.jwt";
+          options.Audience = "ro.client.jwt";
           options.BackchannelHttpHandler = handler;
           options.TokenValidationParameters.ValidTypes = new[] { "at+jwt" };
           options.TokenValidationParameters.ValidateAudience = false;
@@ -81,15 +81,15 @@ namespace ocelot_gw
         {
           Console.WriteLine("=========================> introspection");
           options.Authority = "https://localhost:5001";
-          options.ClientId = "client.kma.token";
-          options.ClientSecret = "1e4f9ffe-7949-4993-a92b-f74a9bf6b995";
+          options.ClientId = "ro.client.token";
+          options.ClientSecret = "pobx";
         });
 
-      services.AddAuthorization(options =>
-      {
-        options.AddPolicy("ReadOnly", policy => policy.RequireScope(new string[] { "guest", "bio" }));
-        options.AddPolicy("FullOperation", policy => policy.RequireScope(new string[] { "pin" }));
-      });
+      // services.AddAuthorization(options =>
+      // {
+      //   options.AddPolicy("ReadOnly", policy => policy.RequireScope(new string[] { "level1", "level2" }));
+      //   options.AddPolicy("FullOperation", policy => policy.RequireScope(new string[] { "level3" }));
+      // });
 
       services.AddHttpClient(OAuth2IntrospectionDefaults.BackChannelHttpClientName).ConfigurePrimaryHttpMessageHandler(() => handler);
     }

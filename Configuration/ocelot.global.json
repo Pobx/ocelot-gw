@@ -4,7 +4,7 @@
     "RequestIdKey": "OcRequestId",
     "ServiceDiscoveryProvider": {
       "Type": "AppConfiguration",
-      "PollingIntervalSeconds":  60
+      "PollingInterval":  60
     }
   }
 }

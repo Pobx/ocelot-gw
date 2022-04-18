@@ -3,8 +3,9 @@
     {
       "DownstreamPathTemplate": "/api/{everything}",
       "UpstreamPathTemplate": "/gw/weather/{everything}",
-      "UpstreamHttpMethod": ["Get"],
+      "UpstreamHttpMethod": ["Get", "Post", "Put"],
       "SwaggerKey": "weathersSwaggerKey",
+      "ServiceName": "weathers",
       "RouteIsCaseSensitive": true,
       "RateLimitOptions": {
         "ClientWhitelist": [],

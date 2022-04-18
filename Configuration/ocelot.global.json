@@ -1,5 +1,5 @@
 {
-  "GolbalConfiguration": {
+  "GlobalConfiguration": {
     "BaseUrl": "https://localhost:5003",
     "RequestIdKey": "OcRequestId",
     "ServiceDiscoveryProvider": {

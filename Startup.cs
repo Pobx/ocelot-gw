@@ -85,12 +85,6 @@ namespace ocelot_gw
           options.ClientSecret = "pobx";
         });
 
-      // services.AddAuthorization(options =>
-      // {
-      //   options.AddPolicy("ReadOnly", policy => policy.RequireScope(new string[] { "level1", "level2" }));
-      //   options.AddPolicy("FullOperation", policy => policy.RequireScope(new string[] { "level3" }));
-      // });
-
       services.AddHttpClient(OAuth2IntrospectionDefaults.BackChannelHttpClientName).ConfigurePrimaryHttpMessageHandler(() => handler);
     }
 

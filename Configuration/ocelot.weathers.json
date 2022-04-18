@@ -5,13 +5,6 @@
       "UpstreamPathTemplate": "/gw/weather/{everything}",
       "UpstreamHttpMethod": ["Get"],
       "SwaggerKey": "weathersSwaggerKey",
-      "DownstreamScheme": "http",
-      "DownstreamHostAndPorts": [
-        {
-          "Host": "localhost",
-          "Port": 5002
-        }
-      ],
       "RouteIsCaseSensitive": true,
       "RateLimitOptions": {
         "ClientWhitelist": [],
@@ -19,10 +12,6 @@
         "Period": "3s",
         "PeriodTimespan": 3,
         "Limit": 2
-      },
-      "AuthenticationOptions": {
-        "AuthenticationProviderKey": "Bearer",
-        "AllowedScopes": ["level1", "level2"]
       }
     }
   ]

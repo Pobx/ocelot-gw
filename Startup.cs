@@ -41,29 +41,29 @@ namespace ocelot_gw
       services.AddSwaggerForOcelot(Configuration);
       services.AddControllers();
 
-      // var handler = new HttpClientHandler();
-      // handler.ServerCertificateCustomValidationCallback = HttpClientHandler.DangerousAcceptAnyServerCertificateValidator;
+      var handler = new HttpClientHandler();
+      handler.ServerCertificateCustomValidationCallback = HttpClientHandler.DangerousAcceptAnyServerCertificateValidator;
 
-      // services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
-      //   .AddJwtBearer(JwtBearerDefaults.AuthenticationScheme, options =>
-      //   {
-      //     Console.WriteLine("=========================> Bearer");
-      //     options.Authority = "https://localhost:5001";
-      //     options.Audience = "ro.client.jwt";
-      //     options.BackchannelHttpHandler = handler;
-      //     options.TokenValidationParameters.ValidTypes = new[] { "at+jwt" };
-      //     options.TokenValidationParameters.ValidateAudience = false;
-      //     options.ForwardDefaultSelector = Selector.ForwardReferenceToken("introspection");
-      //   })
-      //   .AddOAuth2Introspection("introspection", options =>
-      //   {
-      //     Console.WriteLine("=========================> introspection");
-      //     options.Authority = "https://localhost:5001";
-      //     options.ClientId = "ro.client.token";
-      //     options.ClientSecret = "pobx";
-      //   });
+      services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+        .AddJwtBearer(JwtBearerDefaults.AuthenticationScheme, options =>
+        {
+          Console.WriteLine("=========================> Bearer");
+          options.Authority = "https://localhost:5001";
+          options.Audience = "ro.client.jwt";
+          options.BackchannelHttpHandler = handler;
+          options.TokenValidationParameters.ValidTypes = new[] { "at+jwt" };
+          options.TokenValidationParameters.ValidateAudience = false;
+          options.ForwardDefaultSelector = Selector.ForwardReferenceToken("introspection");
+        })
+        .AddOAuth2Introspection("introspection", options =>
+        {
+          Console.WriteLine("=========================> introspection");
+          options.Authority = "https://localhost:5001";
+          options.ClientId = "ro.client.token";
+          options.ClientSecret = "pobx";
+        });
 
-      // services.AddHttpClient(OAuth2IntrospectionDefaults.BackChannelHttpClientName).ConfigurePrimaryHttpMessageHandler(() => handler);
+      services.AddHttpClient(OAuth2IntrospectionDefaults.BackChannelHttpClientName).ConfigurePrimaryHttpMessageHandler(() => handler);
     }
 
     // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

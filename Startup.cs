@@ -38,7 +38,9 @@ namespace ocelot_gw
     public void ConfigureServices(IServiceCollection services)
     {
       services.AddOcelot(Configuration).AddAppConfiguration();
-      services.AddSwaggerForOcelot(Configuration);
+      services.AddSwaggerForOcelot(Configuration, options => {
+        options.GenerateDocsForAggregates = true;
+      });
       services.AddControllers();
 
       var handler = new HttpClientHandler();

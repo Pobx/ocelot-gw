@@ -6,6 +6,7 @@
       "UpstreamHttpMethod": ["Get"],
       "SwaggerKey": "weathersSwaggerKey",
       "ServiceName": "weathers",
+      "Key": "guest-data",
       "RouteIsCaseSensitive": true,
       "RateLimitOptions": {
         "ClientWhitelist": [],
@@ -16,11 +17,12 @@
       }
     },
     {
-      "DownstreamPathTemplate": "/api/{everything}",
-      "UpstreamPathTemplate": "/gw/weather/{everything}",
-      "UpstreamHttpMethod": ["Get", "Post", "Put"],
+      "DownstreamPathTemplate": "/api/WeatherForecast/name",
+      "UpstreamPathTemplate": "/gw/weather/name",
+      "UpstreamHttpMethod": ["Get"],
       "SwaggerKey": "weathersSwaggerKey",
       "ServiceName": "weathers",
+      "Key": "name-data",
       "RouteIsCaseSensitive": true,
       "RateLimitOptions": {
         "ClientWhitelist": [],
@@ -28,10 +30,22 @@
         "Period": "3s",
         "PeriodTimespan": 5,
         "Limit": 10
-      },
-      "AuthenticationOptions": {
-        "AuthenticationProviderKey": "Bearer",
-        "AllowedScopes": ["level1", "level2"]
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/api/WeatherForecast/Age",
+      "UpstreamPathTemplate": "/gw/weather/Age",
+      "UpstreamHttpMethod": ["Get"],
+      "SwaggerKey": "weathersSwaggerKey",
+      "ServiceName": "weathers",
+      "Key": "age-data",
+      "RouteIsCaseSensitive": true,
+      "RateLimitOptions": {
+        "ClientWhitelist": [],
+        "EnableRateLimiting": true,
+        "Period": "3s",
+        "PeriodTimespan": 5,
+        "Limit": 10
       }
     }
   ]

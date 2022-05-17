@@ -1,3 +1,10 @@
 {
-  "Aggregates": []
+  "Aggregates": [
+    {
+      "RouteKeys": ["guest-data", "name-data", "age-data"],
+      "UpstreamHttpMethod": ["Get"],
+      "UpstreamPathTemplate": "/gw/weather/guest-profile",
+      "Description": "Description for this route bla bla bla ..."
+    }
+  ]
 }
